@@ -15,13 +15,13 @@ function orderPizza(pizza, callback) {
 
 function deliver (err, pizza) {
   if (err) {
-    return tryCheese(err, deliver)
+    return tryCheese(err)
   }
   console.info('Delivered a ' + pizza + ' pizza')
   enjoy(pizza)
 }
 
-function tryCheese (err, callback) {
+function tryCheese (err) {
   console.warn(err.message)
   orderPizza('cheese', deliver)
 }
